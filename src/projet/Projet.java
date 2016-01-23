@@ -17,7 +17,7 @@ public class Projet {
      */
     public static void main(String[] args) {
         Repliques repliquesFelix = new Repliques();
-        repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui");
+        repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui dis donc !");
         repliquesFelix.ajouterDiscussion("J'aime beacoup ton t-shirt !");
         PNJ felix = new PNJ(0, "Felix", 21, 1, 1000, new Discuter(), repliquesFelix);
         
