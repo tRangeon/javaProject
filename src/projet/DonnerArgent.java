@@ -6,14 +6,18 @@ import java.util.*;
 public class DonnerArgent implements Comportement {
 
 	private Joueur joueur;
+        private int montant;
 	private int contexte;
 
-	public DonnerArgent(Joueur joueur, int contexte) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+	public DonnerArgent(Joueur joueur, int montant, int contexte) {
+            this.montant = montant;
+            this.contexte = contexte;
+            this.joueur = joueur;
 	}
 
 	public void interaction(PNJ cePNJ) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            System.out.println(cePNJ.getRepliques().getDonsArgent().get(contexte));
+            joueur.modifierArgent(montant);
 	}
 
 }

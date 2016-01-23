@@ -12,8 +12,9 @@ public abstract class Personnage {
 	private int argent;
 	private ArrayList<String> succes;
 
-	public void modifierArgent() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+	public void modifierArgent(int montant) {
+                System.out.println("Je modifie l'argent de " + this.getNom() + " de " + montant + " euros");
+                System.out.println("%%% Ne pas oublier d'implementer la methode modifier.argent() dans Personnage %%%");
 	}
 
     /**

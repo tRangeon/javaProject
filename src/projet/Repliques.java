@@ -20,7 +20,11 @@ public class Repliques {
 	}
 
     public void ajouterDiscussion(String discussion){
-        discussions.add(discussion);
+        this.discussions.add(discussion);
+    }
+    
+    public void ajouterDonArgent(String donArgent){
+        this.donsArgent.add(donArgent);
     }
     
     /**
