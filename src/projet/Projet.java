@@ -19,9 +19,12 @@ public class Projet {
         System.out.println("---------- Debut du jeu --------\n");
         
         Joueur joueur = new Joueur("Thomas");
-        Joueur joueur2 = new Joueur("Felix");
         
-        joueur.transaction(joueur2, 100);
+        Repliques rep = new Repliques(true);
+        rep.ajouterReplique(3, "Hello");
+
+        System.out.println(rep.getPrisesArgent());
+        
         
         /*Repliques repliquesFelix = new Repliques();
         repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui");
