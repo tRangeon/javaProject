@@ -1,6 +1,5 @@
 package projet;
 
-import java.io.*;
 import java.util.*;
 
 public class Joueur extends Personnage {
