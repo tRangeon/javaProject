@@ -30,7 +30,7 @@ public class Projet {
         
         PNJ felix = new PNJ(0, "Felix", 21, 1, 1000, new Discuter(), repliquesFelix);
              
-        //felix.interagir();
+        felix.interagir();
         felix.setComportement(new DonnerArgent(joueur, 100, 1));
         felix.interagir();
         
