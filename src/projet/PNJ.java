@@ -1,17 +1,38 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
+/**
+ * Classe PNJ (Personnage Non Joueur)
+ * @author isen
+ */
 public class PNJ extends Personnage {
 
 	private Comportement comportement;
 	private Repliques repliques;
 
-	public PNJ() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+        /**
+         * Constructeur par défaut pour la classe PNJ, il faut juste renseigner le nom du personnage
+         * @param nom 
+         */
+	public PNJ(String nom) {
+            setIdentifiant(1);
+            setNom(nom);
+            setAge(25);
+            setSexe(1);
+            setArgent(200);
+            setComportement(new Discuter());
+            setRepliques(new Repliques(true));
 	}
-
+        
+        /**
+         * Constructeur de la classe PNJ, il faut renseigner tous les attributs du personnage
+         * @param identifiant
+         * @param nom
+         * @param age
+         * @param sexe
+         * @param argent
+         * @param comportement
+         * @param repliques 
+         */
 	public PNJ(int identifiant, String nom, int age, int sexe, int argent,  Comportement comportement, Repliques repliques) {
             setIdentifiant(identifiant);
             setNom(nom);
@@ -22,8 +43,13 @@ public class PNJ extends Personnage {
             setRepliques(repliques);
       	}
 
+        /**
+         * Methode interagir qui est la base de toutes les ations possibles avec un PNJ
+         * Selon le comportement du PNJ, les actions seront différentes
+         */
 	public void interagir() {
-		this.comportement.interaction(this);
+            System.out.print(getNom() + ": ");
+            this.comportement.interaction(this);
 	}
 
     /**
