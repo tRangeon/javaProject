@@ -16,8 +16,9 @@ public class Projet {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Joueur joueur = new Joueur();
-        joueur.setNom("Thomas");
+        System.out.println("---------- Debut du jeu --------\n");
+        
+        Joueur joueur = new Joueur("Thomas");
         
         Repliques repliquesFelix = new Repliques();
         repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui");
