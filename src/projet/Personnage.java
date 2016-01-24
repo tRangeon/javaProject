@@ -21,7 +21,7 @@ public abstract class Personnage {
          */
 	public void modifierArgent(int montant) {
                 System.out.println("Je modifie l'argent de " + this.getNom() + " de " + montant + " euros");
-                System.out.println("(ATTENTION: Ne pas oublier d'implementer la methode modifier.argent() dans Personnage)");
+                System.out.println("(ATTENTION Ne pas oublier d'implementer la methode modifier.argent() dans Personnage)");
 	}
 
     /**
