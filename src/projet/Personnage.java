@@ -1,8 +1,11 @@
 package projet;
 
-import java.io.*;
 import java.util.*;
 
+/**
+ * Classe abstraite personnage, qui comprend le Joueur et les Personnages Non Joueurs (PNJ)
+ * @author isen
+ */
 public abstract class Personnage {
 
 	private int identifiant;
@@ -12,9 +15,13 @@ public abstract class Personnage {
 	private int argent;
 	private ArrayList<String> succes;
 
+        /**
+         * Methode qui modifie l'argent du personnage. Le montant peut etre positif ou negatif, pour augmenter ou diminuer l'argent du personnage
+         * @param montant 
+         */
 	public void modifierArgent(int montant) {
                 System.out.println("Je modifie l'argent de " + this.getNom() + " de " + montant + " euros");
-                System.out.println("%%% Ne pas oublier d'implementer la methode modifier.argent() dans Personnage %%%");
+                System.out.println("(ATTENTION: Ne pas oublier d'implementer la methode modifier.argent() dans Personnage)");
 	}
 
     /**
