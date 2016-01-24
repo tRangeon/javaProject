@@ -17,7 +17,7 @@ public class Projet {
      */
     public static void main(String[] args) {
         Joueur joueur = new Joueur();
-        joueur.setNom("Thomas R");
+        joueur.setNom("Thomas");
         
         Repliques repliquesFelix = new Repliques();
         repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui");
