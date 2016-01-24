@@ -19,8 +19,11 @@ public class Projet {
         System.out.println("---------- Debut du jeu --------\n");
         
         Joueur joueur = new Joueur("Thomas");
+        Joueur joueur2 = new Joueur("Felix");
         
-        Repliques repliquesFelix = new Repliques();
+        joueur.transaction(joueur2, 100);
+        
+        /*Repliques repliquesFelix = new Repliques();
         repliquesFelix.ajouterDiscussion("Il fait beau aujourd'hui");
         repliquesFelix.ajouterDiscussion("J'aime beacoup ton t-shirt !");
         repliquesFelix.ajouterDiscussion("T'en veux encore ?");
@@ -32,7 +35,8 @@ public class Projet {
              
         felix.interagir();
         felix.setComportement(new DonnerArgent(joueur, 100, 1));
-        felix.interagir();
+        felix.interagir();*/
+        
         
     }
     
