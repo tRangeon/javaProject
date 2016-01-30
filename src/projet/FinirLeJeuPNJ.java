@@ -8,7 +8,7 @@ public class FinirLeJeuPNJ implements Comportement {
 	private MaitreDuJeu maitreDuJeu;
 	private int victoire;
 
-	public FinirLeJeuPNJ(MaitreDuJeu maitreDuJeu, boolean victoire) {
+	public FinirLeJeuPNJ(MaitreDuJeu maitreDuJeu, int victoire) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
