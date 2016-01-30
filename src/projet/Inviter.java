@@ -7,9 +7,9 @@ public class Inviter implements Comportement {
 
 	private MaitreDuJeu maitreDuJeu;
 	private Joueur joueur;
-	private Piece piece;
+	private int numeroPiece;
 
-	public Inviter(MaitreDuJeu maitreDuJeu, Joueur joueur, Piece piece) {
+	public Inviter(MaitreDuJeu maitreDuJeu, Joueur joueur, int NumeroPiece) {
 		throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
