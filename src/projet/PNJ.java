@@ -8,6 +8,9 @@ public class PNJ extends Personnage {
 
 	private Comportement comportement;
 	private Repliques repliques;
+        private Joueur joueur;
+        private MaitreDuJeu maitreDuJeu;
+        private int numeroPiece;
 
         /**
          * Constructeur par défaut pour la classe PNJ, il faut juste renseigner le nom du personnage
@@ -79,5 +82,55 @@ public class PNJ extends Personnage {
     public void setRepliques(Repliques repliques) {
         this.repliques = repliques;
     }
+/**
+ * 
+ * @param choixComportement 0 pour Inviter,1 pour DonnerArgent,2 pour PrendreArgent,3 pour Discuter et 4 pour FinirLeJeuPNJ
+ * @param parametre1
+ * @param parametre2 
+ */
+    public void modifierComportement(int choixComportement,int parametre1,int parametre2){
+        switch (choixComportement)
+        {
+          case 0:
+            this.setComportement(new Inviter(getMaitreDuJeu(),getJoueur(), parametre1));
+            break;
+          case 1:
+            this.setComportement(new DonnerArgent(getJoueur(), parametre1,parametre2));
+           break;
+          case 2:
+            this.setComportement(new PrendreArgent(getJoueur(), parametre1));
+           break;
+          case 3:
+            this.setComportement(new Discuter());
+           break;
+          case 4:
+            this.setComportement(new FinirLeJeuPNJ(getMaitreDuJeu(),parametre1));
+           break;
+          default:
+            System.out.println("Il faut davantage travailler.");
+        }
+    }
+
+    /**
+     * @return the joueur
+     */
+    public Joueur getJoueur() {
+        return joueur;
+    }
+
+    /**
+     * @return the maitreDuJeu
+     */
+    public MaitreDuJeu getMaitreDuJeu() {
+        return maitreDuJeu;
+    }
+
+    /**
+     * @return the numeroPiece
+     */
+    public int getNumeroPiece() {
+        return numeroPiece;
+    }
 
 }
+
