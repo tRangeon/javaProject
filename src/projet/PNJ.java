@@ -2,58 +2,104 @@ package projet;
 
 /**
  * Classe PNJ (Personnage Non Joueur)
+ *
  * @author isen
  */
 public class PNJ extends Personnage {
 
-	private Comportement comportement;
-	private Repliques repliques;
-        private Joueur joueur;
-        private MaitreDuJeu maitreDuJeu;
-        private int numeroPiece;
+    private Comportement comportement;
+    private Repliques repliques;
+    private Joueur joueur;
+    private MaitreDuJeu maitreDuJeu;
+    private int numeroPiece;
 
-        /**
-         * Constructeur par défaut pour la classe PNJ, il faut juste renseigner le nom du personnage
-         * @param nom 
-         */
-	public PNJ(String nom) {
-            setIdentifiant(1);
-            setNom(nom);
-            setAge(25);
-            setSexe(1);
-            setArgent(200);
-            setComportement(new Discuter());
-            setRepliques(new Repliques(true));
-	}
-        
-        /**
-         * Constructeur de la classe PNJ, il faut renseigner tous les attributs du personnage
-         * @param identifiant
-         * @param nom
-         * @param age
-         * @param sexe
-         * @param argent
-         * @param comportement
-         * @param repliques 
-         */
-	public PNJ(int identifiant, String nom, int age, int sexe, int argent,  Comportement comportement, Repliques repliques) {
-            setIdentifiant(identifiant);
-            setNom(nom);
-            setAge(age);
-            setSexe(sexe);
-            setArgent(argent);
-            setComportement(comportement);
-            setRepliques(repliques);
-      	}
+    /**
+     * Constructeur par défaut pour la classe PNJ, il faut juste renseigner le
+     * nom du personnage
+     *
+     * @param nom
+     * @param joueur 
+     * @param maitreDuJeu 
+     */
+    public PNJ(String nom, Joueur joueur, MaitreDuJeu maitreDuJeu) {
+        setIdentifiant(1);
+        setNom(nom);
+        setAge(25);
+        setSexe(1);
+        setArgent(200);
+        setComportement(new Discuter(joueur));
+        setRepliques(new Repliques(true));
+        setJoueur(joueur);
+        setMaitreDuJeu(maitreDuJeu);
+        setNumeroPiece(0);
 
-        /**
-         * Methode interagir qui est la base de toutes les ations possibles avec un PNJ
-         * Selon le comportement du PNJ, les actions seront différentes
-         */
-	public void interagir() {
-            System.out.print(getNom() + ": ");
-            this.comportement.interaction(this);
-	}
+    }
+
+    /**
+     * Constructeur de la classe PNJ, il faut renseigner tous les attributs du
+     * personnage
+     *
+     * @param identifiant
+     * @param nom
+     * @param age
+     * @param sexe
+     * @param argent
+     * @param comportement
+     * @param repliques
+     * @param joueur 
+     * @param maitreDuJeu 
+     * @param numeroPiece 
+     */
+    public PNJ(int identifiant, String nom, int age, int sexe, int argent, Comportement comportement, Repliques repliques, Joueur joueur, MaitreDuJeu maitreDuJeu, int numeroPiece) {
+        setIdentifiant(identifiant);
+        setNom(nom);
+        setAge(age);
+        setSexe(sexe);
+        setArgent(argent);
+        setComportement(comportement);
+        setRepliques(repliques);
+        setJoueur(joueur);
+        setMaitreDuJeu(maitreDuJeu);
+        setNumeroPiece(numeroPiece);
+    }
+
+    /**
+     * Methode interagir qui est la base de toutes les ations possibles avec un
+     * PNJ Selon le comportement du PNJ, les actions seront différentes
+     */
+    public void interagir() {
+        System.out.print(getNom() + ": ");
+        this.comportement.interaction(this);
+    }
+
+    /**
+     *
+     * @param choixComportement 0 pour Inviter,1 pour DonnerArgent,2 pour
+     * PrendreArgent,3 pour Discuter et 4 pour FinirLeJeuPNJ
+     * @param parametre1
+     * @param parametre2
+     */
+    public void modifierComportement(int choixComportement, int parametre1, int parametre2) {
+        switch (choixComportement) {
+            case 0:
+                this.setComportement(new Inviter(getMaitreDuJeu(), getJoueur(), parametre1));
+                break;
+            case 1:
+                this.setComportement(new DonnerArgent(getJoueur(), parametre1, parametre2));
+                break;
+            case 2:
+                this.setComportement(new PrendreArgent(getJoueur(), parametre1, parametre2));
+                break;
+            case 3:
+                this.setComportement(new Discuter(getJoueur()));
+                break;
+            case 4:
+                this.setComportement(new FinirLeJeuPNJ(getMaitreDuJeu(), parametre1));
+                break;
+            default:
+                System.out.println("Il faut davantage travailler.");
+        }
+    }
 
     /**
      * @return the comportement
@@ -82,40 +128,19 @@ public class PNJ extends Personnage {
     public void setRepliques(Repliques repliques) {
         this.repliques = repliques;
     }
-/**
- * 
- * @param choixComportement 0 pour Inviter,1 pour DonnerArgent,2 pour PrendreArgent,3 pour Discuter et 4 pour FinirLeJeuPNJ
- * @param parametre1
- * @param parametre2 
- */
-    public void modifierComportement(int choixComportement,int parametre1,int parametre2){
-        switch (choixComportement)
-        {
-          case 0:
-            this.setComportement(new Inviter(getMaitreDuJeu(),getJoueur(), parametre1));
-            break;
-          case 1:
-            this.setComportement(new DonnerArgent(getJoueur(), parametre1,parametre2));
-           break;
-          case 2:
-            this.setComportement(new PrendreArgent(getJoueur(), parametre1));
-           break;
-          case 3:
-            this.setComportement(new Discuter());
-           break;
-          case 4:
-            this.setComportement(new FinirLeJeuPNJ(getMaitreDuJeu(),parametre1));
-           break;
-          default:
-            System.out.println("Il faut davantage travailler.");
-        }
-    }
 
     /**
      * @return the joueur
      */
     public Joueur getJoueur() {
         return joueur;
+    }
+
+    /**
+     * @param joueur the joueur to set
+     */
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
     }
 
     /**
@@ -126,11 +151,24 @@ public class PNJ extends Personnage {
     }
 
     /**
+     * @param maitreDuJeu the maitreDuJeu to set
+     */
+    public void setMaitreDuJeu(MaitreDuJeu maitreDuJeu) {
+        this.maitreDuJeu = maitreDuJeu;
+    }
+
+    /**
      * @return the numeroPiece
      */
     public int getNumeroPiece() {
         return numeroPiece;
     }
 
-}
+    /**
+     * @param numeroPiece the numeroPiece to set
+     */
+    public void setNumeroPiece(int numeroPiece) {
+        this.numeroPiece = numeroPiece;
+    }
 
+}

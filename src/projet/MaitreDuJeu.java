@@ -10,7 +10,8 @@ public class MaitreDuJeu {
 	private ArrayList<Piece> pieces;
 
 	public MaitreDuJeu() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+            System.out.println("ATTENTION: Le constructeur MaitreDuJeu() n'est pas encore implémenté !");
+		//throw new UnsupportedOperationException("The method is not implemented yet.");
 	}
 
 	public void deplacerPersonnage(Personnage personnage, Piece destination) {

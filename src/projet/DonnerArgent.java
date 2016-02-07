@@ -1,8 +1,5 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
 public class DonnerArgent implements Comportement {
 
 	private Joueur joueur;
@@ -17,7 +14,10 @@ public class DonnerArgent implements Comportement {
 
 	public void interaction(PNJ cePNJ) {
             System.out.println(cePNJ.getRepliques().getDonsArgent().get(contexte));
-            joueur.modifierArgent(montant);
-	}
+            cePNJ.transaction(joueur, montant);
+            System.out.println("");
 
+        // Définit le comportement qu'aura le PNJ au tour suivant
+            // A ECRIRE !!!
+        }
 }
