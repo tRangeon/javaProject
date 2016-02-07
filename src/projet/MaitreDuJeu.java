@@ -1,6 +1,7 @@
 package projet;
 
 import java.util.*;
+import java.util.Scanner;
 
 public class MaitreDuJeu {
 
@@ -25,8 +26,8 @@ public class MaitreDuJeu {
             System.out.println("Accès refusé !");
         }
     }
-    
-    public void deplacerJoueur(Joueur joueur, Piece destination){
+
+    public void deplacerJoueur(Joueur joueur, Piece destination) {
         if (destination.acceder() == true) {
             joueur.setPosition(destination);
         } else {
@@ -35,12 +36,33 @@ public class MaitreDuJeu {
     }
 
     public void jouerUnTour() {
-        System.out.println("ATTENTION: Methode jouerUnTour pas implémentée !");
-        System.out.println(joueur.getNom() + " est dans la pièce: " + joueur.getPosition().getNom());
-        System.out.print("Personnages présents: ");
-        joueur.getPosition().afficherPNJs();
-        System.out.println("Objets à disposition: !!! METHODE PAS ENCORE ECRITE !!!");
-        
+        if (victoire == 1) {
+            System.out.println("\nFelicitations tu as gagné le jeu !");
+        } else if (victoire == 0) {
+            System.out.println("\nGame Over - Tu as perdu !");
+        } else {
+
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("ATTENTION: Methode jouerUnTour pas implémentée !");
+            System.out.println(joueur.getNom() + " est dans la pièce: " + joueur.getPosition().getNom());
+            System.out.print("Personnages présents: ");
+            joueur.getPosition().afficherPNJs();
+            System.out.print("Objets dans la pièce: ");
+            joueur.getPosition().afficherObjets();
+
+            // Utiliser un try catch ici pour les entrées du l'utilisateur !
+            System.out.println("\nQue voulez vous faire ? [PAS IMPLEMENTE POUR L'INSTANT]\n1 - Parler à un personnage\n2 - Interagir avec un objet\n3 - Se déplacer\n4 - Gagner jeu [TEMPORAIRE]");
+            System.out.print("Réponse: ");
+            int reponse = scanner.nextInt();
+            switch (reponse){
+                case 4:
+                    setVictoire(1);
+                    break;
+                    
+            }
+        }
+
     }
 
     /**

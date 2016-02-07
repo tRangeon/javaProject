@@ -42,9 +42,20 @@ public class Piece {
         }
         System.out.println(getPNJs().get(index).getNom());
         } else{
+            System.out.println("Aucun personnage");
+        }
+    }
+    
+    public void afficherObjets(){
+        int index;
+        if(getObjets().size() > 0){
+        for(index = 0; index < getObjets().size()-1; index++){
+            System.out.print(getObjets().get(index).getNom() + ", ");
+        }
+        System.out.println(getObjets().get(index).getNom());
+        } else{
             System.out.println("Aucun objet");
         }
-        
     }
 
     /**

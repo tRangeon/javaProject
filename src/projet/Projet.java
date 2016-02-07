@@ -23,13 +23,13 @@ public class Projet {
         Joueur joueur = new Joueur("Thomas");
         maitreDuJeu.setJoueur(joueur);
         
-        Piece p1 = new Piece(0, "Acceuil");
-        Piece p2 = new Piece(1, "Maison Isen");
+        Piece p1 = new Piece(1, "Acceuil");
+        Piece p2 = new Piece(2, "Maison Isen");
                 
         PNJ mathieu = new PNJ("Mathieu", joueur, maitreDuJeu);
         PNJ helene = new PNJ("Helene", joueur, maitreDuJeu);
         PNJ gaetan = new PNJ("Gaetan", joueur, maitreDuJeu);
-        
+                     
         p1.ajouterPNJ(mathieu);
         p2.ajouterPNJ(helene);
         p2.ajouterPNJ(gaetan);
@@ -41,13 +41,18 @@ public class Projet {
         pieces.add(p2);
         maitreDuJeu.setPieces(pieces);    
        
+        mathieu.setComportement(new Inviter(maitreDuJeu, joueur, 2));
+        
         maitreDuJeu.jouerUnTour();
         
-        System.out.println("\nOn va parler à Mathieu");
         mathieu.interagir();
         
-        maitreDuJeu.deplacerJoueur(joueur, p2);
+        while( (maitreDuJeu.getVictoire() != 0) && (maitreDuJeu.getVictoire() != 1) ){
+            maitreDuJeu.jouerUnTour();
+            
+        }
         maitreDuJeu.jouerUnTour();
+        
        
         /*PNJ matthieu = new PNJ("Matthieu", joueur, maitreDuJeu);
          matthieu.getRepliques().ajouterReplique(4, "Hello " + joueur.getNom() + ", tu est rayonnant aujourd'hui");
