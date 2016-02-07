@@ -16,6 +16,9 @@ public class PrendreArgent implements Comportement {
         System.out.println(cePNJ.getRepliques().getPrisesArgent().get(contexte));
         joueur.transaction(cePNJ, montant);
         System.out.println("");
+        
+        // Définit le comportement qu'aura le PNJ au tour suivant
+            // A ECRIRE !!!
     }
 
 }

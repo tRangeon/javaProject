@@ -1,8 +1,5 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
 public class Inviter implements Comportement {
 
 	private MaitreDuJeu maitreDuJeu;

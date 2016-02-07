@@ -4,11 +4,13 @@ import java.util.*;
 
 public class Joueur extends Personnage {
 
-    private int position = 0;
+    private Piece position;
 
     /**
-     * Constructeur de Joueur par défaut, il faut seulement renseigner le nom du joueur
-     * @param nom 
+     * Constructeur de Joueur par défaut, il faut seulement renseigner le nom du
+     * joueur
+     *
+     * @param nom
      */
     public Joueur(String nom) {
         setIdentifiant(0);
@@ -17,24 +19,26 @@ public class Joueur extends Personnage {
         setSexe(1);
         setArgent(100);
         setSucces(new ArrayList<String>());
-        setPosition(0);
+        setPosition(new Piece(0, "Piece par défaut"));
     }
 
     /**
-     * Constructeur du Joueur, il faut renseigner toutes les valeurs des attributs du joueur
+     * Constructeur du Joueur, il faut renseigner toutes les valeurs des
+     * attributs du joueur
+     *
      * @param identifiant
      * @param nom
      * @param age
      * @param sexe
-     * @param argent 
-     * @param position 
+     * @param argent
+     * @param position
      */
-    public Joueur(int identifiant, String nom, int age, int sexe, int argent, int position) {
-        setIdentifiant(0);
+    public Joueur(int identifiant, String nom, int age, int sexe, int argent, Piece position) {
+        setIdentifiant(identifiant);
         setNom(nom);
-        setAge(20);
-        setSexe(1);
-        setArgent(100);
+        setAge(age);
+        setSexe(sexe);
+        setArgent(argent);
         setSucces(new ArrayList<String>());
         setPosition(position);
     }
@@ -42,14 +46,14 @@ public class Joueur extends Personnage {
     /**
      * @return the position
      */
-    public int getPosition() {
+    public Piece getPosition() {
         return position;
     }
 
     /**
      * @param position the position to set
      */
-    public void setPosition(int position) {
+    public void setPosition(Piece position) {
         this.position = position;
     }
 
