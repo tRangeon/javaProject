@@ -23,41 +23,31 @@ public class Projet {
         Joueur joueur = new Joueur("Thomas");
         maitreDuJeu.setJoueur(joueur);
         
-        Piece p1 = new Piece(0, "Piece 1");
-        Piece p2 = new Piece(1, "Piece 2");
+        Piece p1 = new Piece(0, "Acceuil");
+        Piece p2 = new Piece(1, "Maison Isen");
                 
         PNJ mathieu = new PNJ("Mathieu", joueur, maitreDuJeu);
         PNJ helene = new PNJ("Helene", joueur, maitreDuJeu);
         PNJ gaetan = new PNJ("Gaetan", joueur, maitreDuJeu);
         
         p1.ajouterPNJ(mathieu);
-        p1.ajouterPNJ(helene);
+        p2.ajouterPNJ(helene);
         p2.ajouterPNJ(gaetan);
+        
+        joueur.setPosition(p1);
                 
         ArrayList<Piece> pieces = new ArrayList();
         pieces.add(p1);
         pieces.add(p2);
-        maitreDuJeu.setPieces(pieces);
+        maitreDuJeu.setPieces(pieces);    
+       
+        maitreDuJeu.jouerUnTour();
         
-        System.out.println("\n" + p1.getNom() + ":");
-        p1.afficherPNJ();
-        System.out.println("\n" + p2.getNom() + ":");
-        p2.afficherPNJ();
-        
-        maitreDuJeu.deplacerPNJ(helene, p2);
-        maitreDuJeu.deplacerPNJ(mathieu, p2);
-                
-        System.out.println("\n" + p1.getNom() + ":");
-        p1.afficherPNJ();
-        System.out.println("\n" + p2.getNom() + ":");
-        p2.afficherPNJ();
-        
-        joueur.setPosition(p1);
-        System.out.println(joueur.getPosition().getNom());
+        System.out.println("\nOn va parler à Mathieu");
+        mathieu.interagir();
         
         maitreDuJeu.deplacerJoueur(joueur, p2);
-        System.out.println(joueur.getPosition().getNom());
-        
+        maitreDuJeu.jouerUnTour();
        
         /*PNJ matthieu = new PNJ("Matthieu", joueur, maitreDuJeu);
          matthieu.getRepliques().ajouterReplique(4, "Hello " + joueur.getNom() + ", tu est rayonnant aujourd'hui");

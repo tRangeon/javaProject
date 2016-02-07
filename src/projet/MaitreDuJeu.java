@@ -35,7 +35,12 @@ public class MaitreDuJeu {
     }
 
     public void jouerUnTour() {
-        throw new UnsupportedOperationException("The method is not implemented yet.");
+        System.out.println("ATTENTION: Methode jouerUnTour pas implémentée !");
+        System.out.println(joueur.getNom() + " est dans la pièce: " + joueur.getPosition().getNom());
+        System.out.print("Personnages présents: ");
+        joueur.getPosition().afficherPNJs();
+        System.out.println("Objets à disposition: !!! METHODE PAS ENCORE ECRITE !!!");
+        
     }
 
     /**

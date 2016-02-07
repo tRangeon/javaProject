@@ -34,11 +34,17 @@ public class Piece {
         return getAcces().accession(this);
     }
     
-    public void afficherPNJ(){
+    public void afficherPNJs(){
         int index;
-        for(index = 0; index < getPNJs().size(); index++){
-            System.out.println(getPNJs().get(index).getNom());
+        if(getPNJs().size() > 0){
+        for(index = 0; index < getPNJs().size()-1; index++){
+            System.out.print(getPNJs().get(index).getNom() + ", ");
         }
+        System.out.println(getPNJs().get(index).getNom());
+        } else{
+            System.out.println("Aucun objet");
+        }
+        
     }
 
     /**
