@@ -29,8 +29,11 @@ public class Projet {
         PNJ mathieu = new PNJ("Mathieu", joueur, maitreDuJeu);
         PNJ helene = new PNJ("Helene", joueur, maitreDuJeu);
         PNJ gaetan = new PNJ("Gaetan", joueur, maitreDuJeu);
+        PNJ felix = new PNJ("Felix", joueur, maitreDuJeu);
+        felix.setArgent(5000);
                      
         p1.ajouterPNJ(mathieu);
+        p1.ajouterPNJ(felix);
         p2.ajouterPNJ(helene);
         p2.ajouterPNJ(gaetan);
         
@@ -42,6 +45,7 @@ public class Projet {
         maitreDuJeu.setPieces(pieces);    
        
         mathieu.setComportement(new Inviter(maitreDuJeu, joueur, 2));
+        felix.setComportement(new DonnerArgent(joueur, 1000, 0));
         
 
         while( (maitreDuJeu.getVictoire() != 0) && (maitreDuJeu.getVictoire() != 1) ){

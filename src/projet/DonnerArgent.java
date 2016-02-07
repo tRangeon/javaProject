@@ -13,9 +13,9 @@ public class DonnerArgent implements Comportement {
 	}
 
 	public void interaction(PNJ cePNJ) {
-            System.out.println(cePNJ.getRepliques().getDonsArgent().get(contexte));
+            System.out.println(cePNJ.getRepliques().getDonsArgent().get(contexte) + "\n");
             cePNJ.transaction(joueur, montant);
-            System.out.println("");
+            joueur.afficherArgent();
 
         // Définit le comportement qu'aura le PNJ au tour suivant
             // A ECRIRE !!!

@@ -48,8 +48,7 @@ public abstract class Personnage {
      */
     public void modifierArgent(int montant){
         System.out.println("[" + nom + ((montant > 0) ? " gagne " : " perd ") + (montant) + " euros]");
-        setArgent(argent + montant);
-        afficherArgent();
+        setArgent(argent + montant);     
     }
 
     /**
@@ -74,6 +73,7 @@ public abstract class Personnage {
         if ( autorisationPersonnage1 && autorisationPersonnage2 ){      // Si la transaction est acceptée
             
             this.modifierArgent(-montant);
+            System.out.print("\n");
             deuxiemePersonnage.modifierArgent(montant);
 
         } else{                                                         // Si la transaction est refusée
