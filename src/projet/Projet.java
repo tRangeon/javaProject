@@ -43,10 +43,7 @@ public class Projet {
        
         mathieu.setComportement(new Inviter(maitreDuJeu, joueur, 2));
         
-        maitreDuJeu.jouerUnTour();
-        
-        mathieu.interagir();
-        
+
         while( (maitreDuJeu.getVictoire() != 0) && (maitreDuJeu.getVictoire() != 1) ){
             maitreDuJeu.jouerUnTour();
             
