@@ -47,7 +47,7 @@ public abstract class Personnage {
      * @param montant 
      */
     public void modifierArgent(int montant){
-        System.out.println("[" + nom + ((montant > 0) ? " gagne " : " perd ") + (montant) + " euros]");
+        System.out.println("[" + nom + ((montant > 0) ? " gagne " : " perd ") + Math.abs(montant) + " euros]");
         setArgent(argent + montant);
     }
 
