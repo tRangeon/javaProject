@@ -12,8 +12,8 @@ public class Discuter implements Comportement {
         int nbreDiscussions = cePNJ.getRepliques().getDiscussions().size();
         int repliqueAleatoire = (int) (Math.random() * 100) % nbreDiscussions;
 
-        System.out.println(cePNJ.getRepliques().getDiscussions().get(repliqueAleatoire) + "\n");
-
+        System.out.println(cePNJ.getRepliques().getDiscussions().get(repliqueAleatoire));
+        
         // Définit le comportement qu'aura le PNJ au tour suivant
         int comportementSuivant = (int) (Math.random() * 100) % 10;
         int montantAleatoire = (int) (Math.random() * 100 + 1) %  joueur.getArgent() ;

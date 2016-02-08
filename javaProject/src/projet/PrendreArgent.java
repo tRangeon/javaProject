@@ -19,6 +19,7 @@ public class PrendreArgent implements Comportement {
         
         // Définit le comportement qu'aura le PNJ au tour suivant
             // A ECRIRE !!!
+            // Y compris quand on vole le portefeuille, il faut mettre à jour l'argent du joueur !
     }
 
 }

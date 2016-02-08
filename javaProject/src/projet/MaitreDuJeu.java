@@ -1,6 +1,5 @@
 package projet;
 
-import java.io.Console;
 import java.util.*;
 import java.util.Scanner;
 
@@ -21,8 +20,8 @@ public class MaitreDuJeu {
                 if (pieces.get(index).getPNJs().contains(pnj)) {
                     pieces.get(index).retirerPNJ(pnj);
                 }
-                destination.ajouterPNJ(pnj);
             }
+            destination.ajouterPNJ(pnj);
         } else {
             System.out.println("Accès refusé !");
         }
@@ -38,10 +37,10 @@ public class MaitreDuJeu {
 
     public void jouerUnTour() {
         if (victoire == 1) {
-            System.out.println("\n----- Felicitations tu as gagné le jeu ! -----");
+            System.out.println("\n----- Felicitations tu as gagné le jeu ! -----\n");
 
         } else if (victoire == 0) {
-            System.out.println("\n----- Game Over - Tu as perdu ! -----");
+            System.out.println("\n----- Game Over - Tu as perdu ! -----\n");
 
         } else {
             System.out.println("\n----- Description du lieu -----");

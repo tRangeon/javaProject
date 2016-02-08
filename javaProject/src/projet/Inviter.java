@@ -11,14 +11,11 @@ public class Inviter implements Comportement {
         setJoueur(joueur);
 
         int index;
+        pieceDestination = joueur.getPosition();    // Par defaut, le joueur reste dans la meme piece si le numero de destination donné est invalide
         for (index = 0; index < maitreDuJeu.getPieces().size(); index++) {
             if (maitreDuJeu.getPieces().get(index).getNumero() == numeroPieceDestination) {
                 pieceDestination = maitreDuJeu.getPieces().get(index);
-            } else {
-                // Si le numero de la piece ne correspond a aucune piece existante, par defaut le joueur reste  a sa place 
-                pieceDestination = joueur.getPosition();
             }
-
         }
 
     }

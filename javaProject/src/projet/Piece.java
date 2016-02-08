@@ -4,8 +4,8 @@ import java.util.*;
 
 public class Piece {
 
-    private int numero = 0;
-    private String nom = "Piece sans nom";
+    private int numero;
+    private String nom;
     private Acces acces;
     private ArrayList<PNJ> PNJs;
     private ArrayList<Objet> objets;

@@ -6,11 +6,41 @@ public class FinirLeJeuPNJ implements Comportement {
     private int victoire;
 
     public FinirLeJeuPNJ(MaitreDuJeu maitreDuJeu, int victoire) {
-        throw new UnsupportedOperationException("The method is not implemented yet.");
+        setMaitreDuJeu(maitreDuJeu);
+        setVictoire(victoire);
     }
 
     public void interaction(PNJ cePNJ) {
-        throw new UnsupportedOperationException("The method is not implemented yet.");
+        System.out.println(cePNJ.getRepliques().getFinDuJeu().get(victoire));
+        maitreDuJeu.setVictoire(victoire);
+    }
+
+    /**
+     * @return the maitreDuJeu
+     */
+    public MaitreDuJeu getMaitreDuJeu() {
+        return maitreDuJeu;
+    }
+
+    /**
+     * @param maitreDuJeu the maitreDuJeu to set
+     */
+    public void setMaitreDuJeu(MaitreDuJeu maitreDuJeu) {
+        this.maitreDuJeu = maitreDuJeu;
+    }
+
+    /**
+     * @return the victoire
+     */
+    public int getVictoire() {
+        return victoire;
+    }
+
+    /**
+     * @param victoire the victoire to set
+     */
+    public void setVictoire(int victoire) {
+        this.victoire = victoire;
     }
 
 }

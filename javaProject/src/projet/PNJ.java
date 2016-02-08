@@ -11,7 +11,6 @@ public class PNJ extends Personnage {
     private Repliques repliques;
     private Joueur joueur;
     private MaitreDuJeu maitreDuJeu;
-    private int numeroPiece;
 
     /**
      * Constructeur par défaut pour la classe PNJ, il faut juste renseigner le
@@ -31,8 +30,6 @@ public class PNJ extends Personnage {
         setRepliques(new Repliques(true));
         setJoueur(joueur);
         setMaitreDuJeu(maitreDuJeu);
-        setNumeroPiece(0);
-
     }
 
     /**
@@ -50,7 +47,7 @@ public class PNJ extends Personnage {
      * @param maitreDuJeu 
      * @param numeroPiece 
      */
-    public PNJ(int identifiant, String nom, int age, int sexe, int argent, Comportement comportement, Repliques repliques, Joueur joueur, MaitreDuJeu maitreDuJeu, int numeroPiece) {
+    public PNJ(int identifiant, String nom, int age, int sexe, int argent, Comportement comportement, Repliques repliques, Joueur joueur, MaitreDuJeu maitreDuJeu) {
         setIdentifiant(identifiant);
         setNom(nom);
         setAge(age);
@@ -60,7 +57,6 @@ public class PNJ extends Personnage {
         setRepliques(repliques);
         setJoueur(joueur);
         setMaitreDuJeu(maitreDuJeu);
-        setNumeroPiece(numeroPiece);
     }
 
     /**
@@ -156,19 +152,4 @@ public class PNJ extends Personnage {
     public void setMaitreDuJeu(MaitreDuJeu maitreDuJeu) {
         this.maitreDuJeu = maitreDuJeu;
     }
-
-    /**
-     * @return the numeroPiece
-     */
-    public int getNumeroPiece() {
-        return numeroPiece;
-    }
-
-    /**
-     * @param numeroPiece the numeroPiece to set
-     */
-    public void setNumeroPiece(int numeroPiece) {
-        this.numeroPiece = numeroPiece;
-    }
-
 }
