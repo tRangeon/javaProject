@@ -6,6 +6,12 @@ public class Inviter implements Comportement {
     private Joueur joueur;
     private Piece pieceDestination;
 
+    /**
+     * Constructeur du comportement Inviter
+     * @param maitreDuJeu
+     * @param joueur
+     * @param numeroPieceDestination
+     */
     public Inviter(MaitreDuJeu maitreDuJeu, Joueur joueur, int numeroPieceDestination) {
         setMaitreDuJeu(maitreDuJeu);
         setJoueur(joueur);
@@ -20,6 +26,10 @@ public class Inviter implements Comportement {
 
     }
 
+    /**
+     * Methode interaction qui met en oeuvre le comportement Inviter
+     * @param cePNJ PNJ qui va inviter le joueur
+     */
     public void interaction(PNJ cePNJ) {
         System.out.println(cePNJ.getRepliques().getInvitations().get(0));
         maitreDuJeu.deplacerJoueur(joueur, pieceDestination);

@@ -92,8 +92,6 @@ public class PNJ extends Personnage {
             case 4:
                 this.setComportement(new FinirLeJeuPNJ(getMaitreDuJeu(), parametre1));
                 break;
-            default:
-                System.out.println("Il faut davantage travailler.");
         }
     }
 

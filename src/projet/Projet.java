@@ -66,6 +66,17 @@ public class Projet {
         p3.ajouterPNJ(gaetan);
         p3.ajouterPNJ(felix);
         
+        // Creation des objets
+        Objet pomme = new Objet(100, "Pomme", new FinirLeJeuObjet(maitreDuJeu, 0), new ParametresObjet());
+        pomme.getParametresObjet().setFinDuJeu(joueur.getNom() + " mange la pomme, mais elle était empoisonnée !");
+        
+        Objet biere = new Objet(101, "Bière", new AfficherTexte(), new ParametresObjet());
+        biere.getParametresObjet().setAffichageTexte(joueur.getNom() + " boit la bière ... cul sec !");
+        
+        // Repartition des objets dans les pieces
+        p1.getObjets().add(pomme);
+        p3.getObjets().add(biere);
+        
                 
         joueur.setPosition(p1);
 

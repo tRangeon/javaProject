@@ -37,6 +37,7 @@ public class Piece {
         getPNJs().remove(pnj);
     }
 
+
     public boolean acceder() {
         return getAcces().accession(this);
     }

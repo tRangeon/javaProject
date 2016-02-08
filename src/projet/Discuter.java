@@ -4,10 +4,18 @@ public class Discuter implements Comportement {
     
     private Joueur joueur;
 
+    /**
+     * Constructeur du comportement Discuter
+     * @param joueur
+     */
     public Discuter(Joueur joueur) {
         setJoueur(joueur);
     }
 
+    /**
+     * Methode qui met en oeuvre le comportement Discuter
+     * @param cePNJ Le PNJ avec qui le joueur va discuter
+     */
     public void interaction(PNJ cePNJ) {
         int nbreDiscussions = cePNJ.getRepliques().getDiscussions().size();
         int repliqueAleatoire = (int) (Math.random() * 100) % nbreDiscussions;

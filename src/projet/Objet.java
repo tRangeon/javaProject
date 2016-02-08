@@ -7,12 +7,25 @@ public class Objet {
 	private Effet effet;
 	private ParametresObjet parametresObjet;
 
-	public Objet() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+	/**
+	 * Constructeur de la classe Objet
+	 * @param identifiant
+	 * @param nom
+	 * @param effet
+	 * @param parametresObjet
+	 */
+	public Objet(int identifiant, String nom, Effet effet, ParametresObjet parametresObjet) {
+		setIdentifaint(identifiant);
+		setNom(nom);
+		setEffet(effet);
+		setParametresObjet(parametresObjet);
 	}
 
+	/**
+	 * Methode qui permet de mettre en oeuvre le comportement de l'objet
+	 */
 	public void interagir() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		this.effet.interaction(this);
 	}
 
     /**

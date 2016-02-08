@@ -1,16 +1,20 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
 public class AfficherTexte implements Effet {
 
+	/**
+	 * Constructeur de l'effet AfficherTexte
+	 */
 	public AfficherTexte() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		
 	}
 
+	/**
+	 * Methode qui met en oeuvre l'effet AfficherTexte
+	 * @param objet
+	 */
 	public void interaction(Objet objet) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		System.out.println(objet.getParametresObjet().getAffichageTexte());
 	}
 
 }
