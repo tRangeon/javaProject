@@ -10,6 +10,9 @@ public class Piece {
     private ArrayList<PNJ> PNJs;
     private ArrayList<Objet> objets;
 
+    /** Constructeur de la classe Piece
+     * 
+     */
     public Piece(int numero, String nom) {
         setNumero(numero);
         setNom(nom);
@@ -18,6 +21,10 @@ public class Piece {
         setObjets(new ArrayList<Objet>());
     }
 
+    /**
+     * Methode qui permet d'ajouter un PNJ à une pièce
+     * @param pnj
+     */
     public void ajouterPNJ(PNJ pnj) {
         if (getPNJs().contains(pnj)) {
             System.out.println("AJOUTER EXCEPTION: PNJ déjà présent dans la pièce");
