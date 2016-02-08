@@ -1,18 +1,60 @@
 package projet;
 
-import java.io.*;
 import java.util.*;
 
 public class Joueur extends Personnage {
 
-	private int position = 0;
+    private Piece position;
 
-	public Joueur() {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
+    /**
+     * Constructeur de Joueur par défaut, il faut seulement renseigner le nom du
+     * joueur
+     *
+     * @param nom
+     */
+    public Joueur(String nom) {
+        setIdentifiant(0);
+        setNom(nom);
+        setAge(20);
+        setSexe(1);
+        setArgent(100);
+        setSucces(new ArrayList<String>());
+        setPosition(new Piece(0, "Piece par défaut"));
+    }
 
-	public Joueur(int identifiant, String nom, int age, int sexe, int argent) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
+    /**
+     * Constructeur du Joueur, il faut renseigner toutes les valeurs des
+     * attributs du joueur
+     *
+     * @param identifiant
+     * @param nom
+     * @param age
+     * @param sexe
+     * @param argent
+     * @param position
+     */
+    public Joueur(int identifiant, String nom, int age, int sexe, int argent, Piece position) {
+        setIdentifiant(identifiant);
+        setNom(nom);
+        setAge(age);
+        setSexe(sexe);
+        setArgent(argent);
+        setSucces(new ArrayList<String>());
+        setPosition(position);
+    }
+
+    /**
+     * @return the position
+     */
+    public Piece getPosition() {
+        return position;
+    }
+
+    /**
+     * @param position the position to set
+     */
+    public void setPosition(Piece position) {
+        this.position = position;
+    }
 
 }

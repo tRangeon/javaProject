@@ -1,19 +1,25 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
 public class PrendreArgent implements Comportement {
 
-	private Joueur joueur;
-	private int contexte;
+    private Joueur joueur;
+    private int montant;
+    private int contexte;
 
-	public PrendreArgent(Joueur joueur, int contexte) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
+    public PrendreArgent(Joueur joueur, int montant, int contexte) {
+        this.montant = montant;
+        this.contexte = contexte;
+        this.joueur = joueur;
+    }
 
-	public void interaction(PNJ cePNJ) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
-	}
+    public void interaction(PNJ cePNJ) {
+        System.out.println(cePNJ.getRepliques().getPrisesArgent().get(contexte));
+        joueur.transaction(cePNJ, montant);
+        joueur.afficherArgent();
+        
+        // Définit le comportement qu'aura le PNJ au tour suivant
+            // A ECRIRE !!!
+            // Y compris quand on vole le portefeuille, il faut mettre à jour l'argent du joueur !
+    }
 
 }
