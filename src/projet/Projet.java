@@ -29,6 +29,15 @@ public class Projet {
         Piece p2 = new Piece(4, "Atrium");
         Piece p3 = new Piece(3, "Bar ISEN");
         
+        p1.getPiecesVoisines().add(p2);
+        p1.getPiecesVoisines().add(p3);
+        
+        p2.getPiecesVoisines().add(p1);
+        p2.getPiecesVoisines().add(p3);
+        
+        p3.getPiecesVoisines().add(p1);
+        p3.getPiecesVoisines().add(p2);
+        
         ArrayList<Piece> pieces = new ArrayList();
         pieces.add(p1);
         pieces.add(p2);
@@ -74,8 +83,8 @@ public class Projet {
         biere.getParametresObjet().setAffichageTexte(joueur.getNom() + " boit la bière ... cul sec !");
         
         // Repartition des objets dans les pieces
-        p1.getObjets().add(pomme);
-        p3.getObjets().add(biere);
+        p1.ajouterObjet(pomme);
+        p3.ajouterObjet(biere);
         
                 
         joueur.setPosition(p1);

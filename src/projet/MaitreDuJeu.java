@@ -89,7 +89,7 @@ public class MaitreDuJeu {
 				selectionObjet(joueur.getPosition().getObjets());
 				break;
 			case 3:
-				System.out.println("Le joueur se déplace [NON IMPLEMENTE]");
+				selectionDeplacement(joueur.getPosition().getPiecesVoisines());
 				break;
 			case 4:
 				setVictoire(1);
@@ -145,6 +145,32 @@ public class MaitreDuJeu {
 			Scanner scanner = new Scanner(System.in);
 			int reponse = scanner.nextInt();
 			liste.get(reponse - 1).interagir();
+
+		}
+		attenteAppuiToucheEntrer();
+	}
+	
+
+	/**
+	 * Methode qui permet de choisir dans quel pièce le joueur va se déplacer
+	 * @param piecesVoisines
+	 */
+	public void selectionDeplacement(ArrayList<Piece> piecesVoisines){
+		if (piecesVoisines.size() <= 0) {
+			System.out.println("Il n'y a aucun endroit où aller ...");
+		} else {
+			System.out.println("Où souhaitez vous allez ?");
+			int index;
+			for (index = 0; index < piecesVoisines.size(); index++) {
+				System.out.println((index + 1) + " - " + piecesVoisines.get(index).getNom());
+			}
+			System.out.print("\nReponse:");
+
+			Scanner scanner = new Scanner(System.in);
+			int reponse = scanner.nextInt();
+			deplacerJoueur(joueur, piecesVoisines.get(reponse - 1));
+			
+			System.out.println(joueur.getNom() + " se déplace dans la pièce: " + piecesVoisines.get(reponse - 1).getNom());
 
 		}
 		attenteAppuiToucheEntrer();

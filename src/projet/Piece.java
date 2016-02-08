@@ -9,6 +9,7 @@ public class Piece {
     private Acces acces;
     private ArrayList<PNJ> PNJs;
     private ArrayList<Objet> objets;
+    private ArrayList<Piece> piecesVoisines;
 
     /** Constructeur de la classe Piece
      * 
@@ -19,6 +20,7 @@ public class Piece {
         setAcces(new Ouvert());
         setPNJs(new ArrayList<PNJ>());
         setObjets(new ArrayList<Objet>());
+        setPiecesVoisines(new ArrayList<Piece>());
     }
 
     /**
@@ -33,15 +35,33 @@ public class Piece {
         }
     }
 
+    /**
+     * Methode qui retire un PNJ d'une pièce
+     * @param pnj
+     */
     public void retirerPNJ(PNJ pnj) {
         getPNJs().remove(pnj);
     }
-
-
+    
+    /**
+     * Methode qui ajoute un objet à une pièce
+     * @param objet
+     */
+    public void ajouterObjet(Objet objet){
+    	getObjets().add(objet);
+    }
+   
+    /**
+     * Indique si l'accès à la pièce est accepté ou non
+     * @return true = accès accordé; false = accès refusé
+     */
     public boolean acceder() {
         return getAcces().accession(this);
     }
     
+    /**
+     * Methode qui affiche les PNJ présents dans la pièce
+     */
     public void afficherPNJs(){
         int index;
         if(getPNJs().size() > 0){
@@ -54,6 +74,9 @@ public class Piece {
         }
     }
     
+    /**
+     * Methode qui affiche les objets présents dans la pièce
+     */
     public void afficherObjets(){
         int index;
         if(getObjets().size() > 0){
@@ -135,5 +158,19 @@ public class Piece {
     public void setObjets(ArrayList<Objet> objets) {
         this.objets = objets;
     }
+
+	/**
+	 * @return the piecesVoisines
+	 */
+	public ArrayList<Piece> getPiecesVoisines() {
+		return piecesVoisines;
+	}
+
+	/**
+	 * @param piecesVoisines the piecesVoisines to set
+	 */
+	public void setPiecesVoisines(ArrayList<Piece> piecesVoisines) {
+		this.piecesVoisines = piecesVoisines;
+	}
 
 }

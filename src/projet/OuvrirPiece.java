@@ -1,18 +1,34 @@
 package projet;
 
-import java.io.*;
-import java.util.*;
-
 public class OuvrirPiece implements Effet {
 
 	private Piece piece;
 
+	/**
+	 * Constructeur de l'effet OuvrirPiece
+	 * @param piece La pièce à ouvrir
+	 */
 	public OuvrirPiece(Piece piece) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		setPiece(piece);
 	}
 
 	public void interaction(Objet objet) {
-		throw new UnsupportedOperationException("The method is not implemented yet.");
+		System.out.println(objet.getParametresObjet().getOuverturePiece());
+		getPiece().setAcces(new Ouvert());
+	}
+
+	/**
+	 * @return the piece
+	 */
+	public Piece getPiece() {
+		return piece;
+	}
+
+	/**
+	 * @param piece the piece to set
+	 */
+	public void setPiece(Piece piece) {
+		this.piece = piece;
 	}
 
 }
