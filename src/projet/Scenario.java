@@ -42,6 +42,7 @@ public class Scenario {
         
         p6.getPiecesVoisines().add(p1);
         
+        // On ajoute les pieces au maitre du jeu
         ArrayList<Piece> pieces = new ArrayList<Piece>();
         pieces.add(p1);
         pieces.add(p2);
@@ -56,11 +57,11 @@ public class Scenario {
         mathieu.getRepliques().getInvitations().remove(0);
         mathieu.getRepliques().ajouterReplique(1, "Hé " + joueur.getNom() + " viens prendre une mousse au Bar ISEN !");
       
-        PNJ mathilde = new PNJ(7, "Mathilde", 19, 2, 3000, new Inviter(maitreDuJeu, joueur, 2), new Repliques(true), joueur, maitreDuJeu);
+        PNJ mathilde = new PNJ(2, "Mathilde", 19, 2, 3000, new Inviter(maitreDuJeu, joueur, 2), new Repliques(true), joueur, maitreDuJeu);
         mathilde.getRepliques().getInvitations().remove(0);
         mathilde.getRepliques().ajouterReplique(1, "Je suis complètement perdue, conduis moi jusqu'à l'Atrium !");
         
-        PNJ agathe = new PNJ(8, "Agathe", 18, 2, 200, new PrendreArgent(joueur, 10, 1), new Repliques(false), joueur, maitreDuJeu);
+        PNJ agathe = new PNJ(3, "Agathe", 18, 2, 200, new PrendreArgent(joueur, 10, 1), new Repliques(false), joueur, maitreDuJeu);
         agathe.getRepliques().ajouterReplique(4, "Je m'ennuie ...");
         agathe.getRepliques().ajouterReplique(4, "J'ai faim !");
         agathe.getRepliques().ajouterReplique(2, "Tiens beau gosse, voilà une pièce pour toi");
@@ -68,26 +69,26 @@ public class Scenario {
         agathe.getRepliques().ajouterReplique(3, "Tu aurais un peu de monaie ? Reviens me voir tout à l'heure pour que je te rembourse");
         agathe.getRepliques().ajouterReplique(2, "T'es un amour de m'avoir prêté de l'argent, tiens voilà ce que je te dois !");
         
-        PNJ habib = new PNJ(6, "Habib", 30, 1, 1500, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
+        PNJ habib = new PNJ(4, "Habib", 30, 1, 1500, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
         habib.getRepliques().getDiscussions().clear();;
         habib.getRepliques().ajouterReplique(4, joueur.getNom() + ", trouve toi une cavalière pour le Gala !");
         
         PNJ helene = new PNJ(5,"Helene", 18, 2, 500, new FinirLeJeuPNJ(maitreDuJeu, 1), new Repliques(true), joueur, maitreDuJeu);
         helene.getRepliques().ajouterReplique(5, "Mon prince charmant, je t'ai enfin trouvé ! Emmène moi au bal !");
         
-        PNJ gaetan = new PNJ(2, "Gaetan", 25, 1, 1000, new PrendreArgent(joueur, joueur.getArgent(), 0), new Repliques(true), joueur, maitreDuJeu);
+        PNJ gaetan = new PNJ(6, "Gaetan", 25, 1, 1000, new PrendreArgent(joueur, joueur.getArgent(), 0), new Repliques(true), joueur, maitreDuJeu);
         
-        PNJ felix = new PNJ(3, "Félix", 21, 1, 1000, new DonnerArgent(joueur, 50, 0), new Repliques(true), joueur, maitreDuJeu);
+        PNJ felix = new PNJ(7, "Félix", 21, 1, 1000, new DonnerArgent(joueur, 50, 0), new Repliques(true), joueur, maitreDuJeu);
         
-        PNJ martin = new PNJ(4, "Martin", 19, 1, 1000, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
+        PNJ martin = new PNJ(8, "Martin", 19, 1, 1000, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
         martin.getRepliques().getDiscussions().clear();
         martin.getRepliques().ajouterReplique(4, "Hello " + joueur.getNom() + ", je suis Martin le coquin !");
         
-        PNJ camille = new PNJ(10, "Camille", 21, 2, 3000, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
+        PNJ camille = new PNJ(9, "Camille", 21, 2, 3000, new Discuter(joueur), new Repliques(true), joueur, maitreDuJeu);
         camille.getRepliques().getDiscussions().clear();
         camille.getRepliques().ajouterReplique(4, "Ca aurait été avec plaisir " + joueur.getNom() + ", mais j'ai déjà un cavalier pour le gala");
         
-        PNJ seraphin = new PNJ(9, "Séraphin", 18, 1, 200, new Inviter(maitreDuJeu, joueur, 4), new Repliques(true), joueur, maitreDuJeu);
+        PNJ seraphin = new PNJ(10, "Séraphin", 18, 1, 200, new Inviter(maitreDuJeu, joueur, 4), new Repliques(true), joueur, maitreDuJeu);
          
         PNJ thomas = new PNJ(11, "Thomas", 21, 1, 3000, new Inviter(maitreDuJeu, joueur, 6), new Repliques(true), joueur, maitreDuJeu);
         thomas.getRepliques().getInvitations().clear();
@@ -96,15 +97,19 @@ public class Scenario {
         // Repartition des PNJ dans les pièces
         p1.ajouterPNJ(habib);
         p1.ajouterPNJ(mathilde);
+        
         p2.ajouterPNJ(mathieu);
         p2.ajouterPNJ(agathe);
-        p3.ajouterPNJ(helene);
+        p2.ajouterPNJ(seraphin);
+        
         p3.ajouterPNJ(martin);
         p3.ajouterPNJ(camille);
+        p3.ajouterPNJ(helene);
+        
         p4.ajouterPNJ(gaetan);
+        
         p5.ajouterPNJ(felix);
         p5.ajouterPNJ(thomas);
-        p2.ajouterPNJ(seraphin);
         
         // Creation des objets
         Objet pomme = new Objet(100, "Pomme", new FinirLeJeuObjet(maitreDuJeu, 0), new ParametresObjet());
@@ -127,8 +132,11 @@ public class Scenario {
         
         // Repartition des objets dans les pieces
         p1.ajouterObjet(pomme);
+        
         p3.ajouterObjet(biere);
+        
         p5.ajouterObjet(badge);
+        
         p6.ajouterObjet(whisky);
         p6.ajouterObjet(herbe);
         p6.ajouterObjet(sujet);
