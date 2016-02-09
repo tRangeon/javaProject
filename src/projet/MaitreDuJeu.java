@@ -79,7 +79,7 @@ public class MaitreDuJeu {
 
 			// Utiliser un try catch ici pour les entrées du l'utilisateur !
 			System.out.println(
-					"\nQue voulez vous faire ?\n\n1 - Parler à un personnage\n2 - Interagir avec un objet\n3 - Se déplacer\n4 - Gagner jeu [TEMPORAIRE]");
+					"\nQue voulez vous faire ?\n\n1 - Parler à un personnage\n2 - Interagir avec un objet\n3 - Se déplacer");
 			System.out.print("\nRéponse: ");
 			int reponse = scanner.nextInt();
 			switch (reponse) {
@@ -91,9 +91,6 @@ public class MaitreDuJeu {
 				break;
 			case 3:
 				selectionDeplacement(joueur.getPosition().getPiecesVoisines());
-				break;
-			case 4:
-				setVictoire(1);
 				break;
 
 			}
@@ -107,17 +104,28 @@ public class MaitreDuJeu {
          * @return joueur 
          */
         public Joueur CreerJoueur() {
+        	int age;
+        	int sexe;
+        	int argent;
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Création du personnage;");
+            System.out.println("Création du personnage");
             System.out.println("Nom du personnage:");
             String nom=scanner.next();
-            System.out.println("Age du personnage:");
-            int age=scanner.nextInt();
-            System.out.println("Sexe du personnage; taper 1 pour un garcon ou 2 pour une fille:");
-            int sexe=scanner.nextInt();
-            System.out.println("Argent du personnage;");
-            int argent=scanner.nextInt();
-            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"piece par default"));
+            System.out.println("Voulez vous personnaliser votre personnage (tapez 1) ou choisir les valeurs par défaut (tapez 2) ?");
+            int reponse = scanner.nextInt();
+            if (reponse == 1){
+            	System.out.println("Age du personnage:");
+                age=scanner.nextInt();
+                System.out.println("Sexe du personnage: tapez 1 pour un homme ou 2 pour une femme:");
+                sexe=scanner.nextInt();
+                System.out.println("Argent du personnage;");
+                argent=scanner.nextInt();
+            } else{
+            	age = 20;
+            	sexe = 1;
+            	argent = 500;
+            }
+            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"piece par defaut"));
             return joueur;
 	}
 

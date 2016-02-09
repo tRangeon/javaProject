@@ -81,7 +81,7 @@ public class Projet {
         PNJ helene = new PNJ(5,"Helene", 18, 2, 500, new FinirLeJeuPNJ(maitreDuJeu, 1), new Repliques(true), joueur, maitreDuJeu);
         helene.getRepliques().ajouterReplique(5, "Mon prince charmant, je t'ai enfin trouvé ! Emmène moi au bal !");
         
-        PNJ gaetan = new PNJ(2, "Gaetan", 25, 1, 1000, new PrendreArgent(joueur, 100, 0), new Repliques(true), joueur, maitreDuJeu);
+        PNJ gaetan = new PNJ(2, "Gaetan", 25, 1, 1000, new PrendreArgent(joueur, joueur.getArgent(), 0), new Repliques(true), joueur, maitreDuJeu);
         
         PNJ felix = new PNJ(3, "Félix", 21, 1, 1000, new DonnerArgent(joueur, 50, 0), new Repliques(true), joueur, maitreDuJeu);
         
