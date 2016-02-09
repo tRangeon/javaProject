@@ -21,7 +21,7 @@ public class Projet {
         
         // Creation du Maitre du jeu et du joueur
         MaitreDuJeu maitreDuJeu = new MaitreDuJeu();
-        Joueur joueur = new Joueur("Thomas");
+        Joueur joueur = maitreDuJeu.CreerJoueur();
         maitreDuJeu.setJoueur(joueur);
         
         // Creation des pieces
