@@ -41,7 +41,7 @@ public class FinirLeJeuObjet implements Effet {
 	/**
 	 * @return the victoire
 	 */
-	public int isVictoire() {
+	public int getVictoire() {
 		return victoire;
 	}
 
