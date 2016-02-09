@@ -33,6 +33,8 @@ public class Repliques {
                 prisesArgent.add("Dis, t'aurais pas un peu d'argent à m'avancer ?");
                 discussions.add("Quelle belle journée ...");
                 discussions.add("C'est fou comme on s'amuse ici !");
+                discussions.add("Tu m'as l'air fatigué non ?");
+                discussions.add("Salut toi, ça va ?");
                 finDuJeu.add("Félicitations, tu as gagné !");
             }
 	}

@@ -3,6 +3,12 @@ package projet;
 import java.util.*;
 import java.util.Scanner;
 
+/**
+ * Classe qui pilote toutes les instances du jeu
+ * 
+ * @author isen
+ *
+ */
 public class MaitreDuJeu {
 
 	private int victoire = -1;
@@ -77,22 +83,44 @@ public class MaitreDuJeu {
 
 			attenteAppuiToucheEntrer();
 
-			// Utiliser un try catch ici pour les entrées du l'utilisateur !
 			System.out.println(
 					"\nQue voulez vous faire ?\n\n1 - Parler à un personnage\n2 - Interagir avec un objet\n3 - Se déplacer");
 			System.out.print("\nRéponse: ");
-			int reponse = scanner.nextInt();
-			switch (reponse) {
-			case 1:
-				selectionPNJ(joueur.getPosition().getPNJs());
-				break;
-			case 2:
-				selectionObjet(joueur.getPosition().getObjets());
-				break;
-			case 3:
-				selectionDeplacement(joueur.getPosition().getPiecesVoisines());
-				break;
+			int reponse = 0;
+			try {
+				reponse = scanner.nextInt();
+			} catch (java.util.InputMismatchException exception) {
+				reponse = 0;
+			} finally {
+				switch (reponse) {
+				case 1:
+					try{
+						selectionPNJ(joueur.getPosition().getPNJs());}
+					catch(java.util.InputMismatchException | java.lang.IndexOutOfBoundsException exception){
+						System.out.println("Entrée incorrecte, retour au menu précédent");
+					}
 
+					break;
+				case 2:
+					try {
+						selectionObjet(joueur.getPosition().getObjets());
+					} catch (java.util.InputMismatchException | java.lang.IndexOutOfBoundsException exception) {
+						System.out.println("Entrée incorrecte, retour au menu précédent");
+					}
+
+					break;
+				case 3:
+					try {
+						selectionDeplacement(joueur.getPosition().getPiecesVoisines());
+					} catch (java.util.InputMismatchException | java.lang.IndexOutOfBoundsException exception) {
+						System.out.println("Entrée incorrecte, retour au menu précédent");
+					}
+
+					break;
+				default:
+					System.out.println("Entrée invalide ...");
+
+				}
 			}
 
 		}
@@ -109,7 +137,7 @@ public class MaitreDuJeu {
 		int sexe = 1;
 		int argent = 1000;
 		String nom = "Joueur sans nom";
-		
+
 		try {
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Création du personnage");
@@ -133,15 +161,12 @@ public class MaitreDuJeu {
 
 		} catch (java.util.InputMismatchException exeption) {
 			System.out.println("Erreur ! L'entrée est invalide !\nVotre personnage aura les valeurs par défaut !");
-			
-						
+
 		} finally {
 			Joueur joueur = new Joueur(0, nom, age, sexe, argent, new Piece(0, "Pièce par défaut"));
 			return joueur;
 		}
-		
-		
-		
+
 	}
 
 	/**
@@ -164,8 +189,8 @@ public class MaitreDuJeu {
 			Scanner scanner = new Scanner(System.in);
 			int reponse = scanner.nextInt();
 			liste.get(reponse - 1).interagir();
+			}
 
-		}
 		attenteAppuiToucheEntrer();
 	}
 
