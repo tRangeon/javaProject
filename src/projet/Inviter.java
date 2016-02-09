@@ -35,7 +35,8 @@ public class Inviter implements Comportement {
         maitreDuJeu.deplacerJoueur(joueur, pieceDestination);
         maitreDuJeu.deplacerPNJ(cePNJ, pieceDestination);
         
-        // Faire le changement de comportement ici
+        // Définit le comportement du PNJ au prochain tour
+        cePNJ.modifierComportement(3, 0, 0);
     }
 
     /**

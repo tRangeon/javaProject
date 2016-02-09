@@ -30,7 +30,8 @@ public class DonnerArgent implements Comportement {
             cePNJ.transaction(joueur, montant);
             joueur.afficherArgent();
 
-        // Définit le comportement qu'aura le PNJ au tour suivant
-            // A ECRIRE !!!
+         // Définit le comportement qu'aura le PNJ au tour suivant
+         cePNJ.modifierComportement(3, 0, 0);
+           
         }
 }

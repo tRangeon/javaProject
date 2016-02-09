@@ -44,8 +44,7 @@ public class PNJ extends Personnage {
      * @param comportement
      * @param repliques
      * @param joueur 
-     * @param maitreDuJeu 
-     * @param numeroPiece 
+     * @param maitreDuJeu
      */
     public PNJ(int identifiant, String nom, int age, int sexe, int argent, Comportement comportement, Repliques repliques, Joueur joueur, MaitreDuJeu maitreDuJeu) {
         setIdentifiant(identifiant);

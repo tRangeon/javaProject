@@ -31,8 +31,11 @@ public class PrendreArgent implements Comportement {
         joueur.afficherArgent();
         
         // Définit le comportement qu'aura le PNJ au tour suivant
-            // A ECRIRE !!!
-            // Y compris quand on vole le portefeuille, il faut mettre à jour l'argent du joueur !
+            if (contexte == 1){	//Remboursement
+            	cePNJ.modifierComportement(1, montant, 1);
+            } else{				//Discuter
+            	cePNJ.modifierComportement(3, 0, 0);
+            }
     }
 
 }
