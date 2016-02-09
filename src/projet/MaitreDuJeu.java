@@ -102,6 +102,25 @@ public class MaitreDuJeu {
 
 	}
 
+        /**
+         * permet de créer le joueur que vous voulez incarner
+         * @return joueur 
+         */
+        public Joueur CreerJoueur() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Création du personnage;");
+            System.out.println("Nom du personnage:");
+            String nom=scanner.next();
+            System.out.println("Age du personnage:");
+            int age=scanner.nextInt();
+            System.out.println("Sexe du personnage; taper 1 pour un garcon ou 2 pour une fille:");
+            int sexe=scanner.nextInt();
+            System.out.println("Argent du personnage;");
+            int argent=scanner.nextInt();
+            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"piece par default"));
+            return joueur;
+	}
+
 	/**
 	 * Methode qui permet de choisir avec quel personnage le joueur veut
 	 * interagir
