@@ -34,7 +34,7 @@ public class MaitreDuJeu {
 			}
 			destination.ajouterPNJ(pnj);
 		} else {
-			System.out.println("Accès refusé !");
+			// Mettre une exception ici ?
 		}
 	}
 
@@ -47,6 +47,7 @@ public class MaitreDuJeu {
 	public void deplacerJoueur(Joueur joueur, Piece destination) {
 		if (destination.acceder() == true) {
 			joueur.setPosition(destination);
+			System.out.println(joueur.getNom() + " se déplace dans la pièce: " + destination.getNom());
 		} else {
 			System.out.println("Acces refusé !");
 		}
@@ -169,8 +170,6 @@ public class MaitreDuJeu {
 			Scanner scanner = new Scanner(System.in);
 			int reponse = scanner.nextInt();
 			deplacerJoueur(joueur, piecesVoisines.get(reponse - 1));
-			
-			System.out.println(joueur.getNom() + " se déplace dans la pièce: " + piecesVoisines.get(reponse - 1).getNom());
 
 		}
 		attenteAppuiToucheEntrer();

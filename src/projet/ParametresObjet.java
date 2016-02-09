@@ -43,7 +43,7 @@ public class ParametresObjet {
 	 * @return ouverturePiece
 	 */
 	public String getOuverturePiece(){
-		return affichageTexte;
+		return ouverturePiece;
 	}
 
 	/**

@@ -29,6 +29,8 @@ public class Projet {
         Piece p2 = new Piece(4, "Atrium");
         Piece p3 = new Piece(3, "Bar ISEN");
         
+        p3.setAcces(new Verouille());
+        
         p1.getPiecesVoisines().add(p2);
         p1.getPiecesVoisines().add(p3);
         
@@ -82,9 +84,13 @@ public class Projet {
         Objet biere = new Objet(101, "Bière", new AfficherTexte(), new ParametresObjet());
         biere.getParametresObjet().setAffichageTexte(joueur.getNom() + " boit la bière ... cul sec !");
         
+        Objet badge = new Objet(102, "Badge", new OuvrirPiece(p3), new ParametresObjet());
+        badge.getParametresObjet().setOuverturePiece("Ce badge dévérouille les portes du Bar ISEN");
+        
         // Repartition des objets dans les pieces
         p1.ajouterObjet(pomme);
         p3.ajouterObjet(biere);
+        p2.ajouterObjet(badge);
         
                 
         joueur.setPosition(p1);

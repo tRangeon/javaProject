@@ -2,7 +2,7 @@ package projet;
 
 public class Objet {
 
-	private int identifaint;
+	private int identifiant;
 	private String nom;
 	private Effet effet;
 	private ParametresObjet parametresObjet;
@@ -15,7 +15,7 @@ public class Objet {
 	 * @param parametresObjet
 	 */
 	public Objet(int identifiant, String nom, Effet effet, ParametresObjet parametresObjet) {
-		setIdentifaint(identifiant);
+		setIdentifiant(identifiant);
 		setNom(nom);
 		setEffet(effet);
 		setParametresObjet(parametresObjet);
@@ -29,17 +29,17 @@ public class Objet {
 	}
 
     /**
-     * @return the identifaint
+     * @return the identifiant
      */
-    public int getIdentifaint() {
-        return identifaint;
+    public int getIdentifiant() {
+        return identifiant;
     }
 
     /**
-     * @param identifaint the identifaint to set
+     * @param identifiant the identifiant to set
      */
-    public void setIdentifaint(int identifaint) {
-        this.identifaint = identifaint;
+    public void setIdentifiant(int identifiant) {
+        this.identifiant = identifiant;
     }
 
     /**
