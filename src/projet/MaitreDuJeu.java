@@ -125,7 +125,7 @@ public class MaitreDuJeu {
             	sexe = 1;
             	argent = 500;
             }
-            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"piece par defaut"));
+            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"Pièce par défaut"));
             return joueur;
 	}
 
