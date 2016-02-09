@@ -94,39 +94,54 @@ public class MaitreDuJeu {
 				break;
 
 			}
-			
+
 		}
 
 	}
 
-        /**
-         * permet de créer le joueur que vous voulez incarner
-         * @return joueur 
-         */
-        public Joueur CreerJoueur() {
-        	int age;
-        	int sexe;
-        	int argent;
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Création du personnage");
-            System.out.println("Nom du personnage:");
-            String nom=scanner.next();
-            System.out.println("Voulez vous personnaliser votre personnage (tapez 1) ou choisir les valeurs par défaut (tapez 2) ?");
-            int reponse = scanner.nextInt();
-            if (reponse == 1){
-            	System.out.println("Age du personnage:");
-                age=scanner.nextInt();
-                System.out.println("Sexe du personnage: tapez 1 pour un homme ou 2 pour une femme:");
-                sexe=scanner.nextInt();
-                System.out.println("Argent du personnage;");
-                argent=scanner.nextInt();
-            } else{
-            	age = 20;
-            	sexe = 1;
-            	argent = 500;
-            }
-            Joueur joueur= new Joueur(0, nom, age, sexe, argent, new Piece(0,"Pièce par défaut"));
-            return joueur;
+	/**
+	 * permet de créer le joueur que vous voulez incarner
+	 * 
+	 * @return joueur
+	 */
+	public Joueur CreerJoueur() {
+		int age = 20;
+		int sexe = 1;
+		int argent = 1000;
+		String nom = "Joueur sans nom";
+		
+		try {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Création du personnage");
+			System.out.println("Nom du personnage:");
+			nom = scanner.next();
+			System.out.println(
+					"Voulez vous personnaliser votre personnage (tapez 1) ou choisir les valeurs par défaut (tapez 2) ?");
+			int reponse = scanner.nextInt();
+			if (reponse == 1) {
+				System.out.println("Age du personnage:");
+				age = scanner.nextInt();
+				System.out.println("Sexe du personnage: tapez 1 pour un homme ou 2 pour une femme:");
+				sexe = scanner.nextInt();
+				System.out.println("Argent du personnage;");
+				argent = scanner.nextInt();
+			} else {
+				age = 20;
+				sexe = 1;
+				argent = 500;
+			}
+
+		} catch (java.util.InputMismatchException exeption) {
+			System.out.println("Erreur ! L'entrée est invalide !\nVotre personnage aura les valeurs par défaut !");
+			
+						
+		} finally {
+			Joueur joueur = new Joueur(0, nom, age, sexe, argent, new Piece(0, "Pièce par défaut"));
+			return joueur;
+		}
+		
+		
+		
 	}
 
 	/**
@@ -177,13 +192,13 @@ public class MaitreDuJeu {
 		}
 		attenteAppuiToucheEntrer();
 	}
-	
 
 	/**
 	 * Methode qui permet de choisir dans quel pièce le joueur va se déplacer
+	 * 
 	 * @param piecesVoisines
 	 */
-	public void selectionDeplacement(ArrayList<Piece> piecesVoisines){
+	public void selectionDeplacement(ArrayList<Piece> piecesVoisines) {
 		if (piecesVoisines.size() <= 0) {
 			System.out.println("Il n'y a aucun endroit où aller ...");
 		} else {
