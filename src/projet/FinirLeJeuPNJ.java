@@ -1,5 +1,11 @@
 package projet;
 
+/**
+ * Comportement pour un PNJ: Gagner ou perdre la partie
+ * 
+ * @author Thomas
+ *
+ */
 public class FinirLeJeuPNJ implements Comportement {
 
 	private MaitreDuJeu maitreDuJeu;

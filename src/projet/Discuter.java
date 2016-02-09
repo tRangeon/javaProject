@@ -3,7 +3,7 @@ package projet;
 /**
  * Comportement d'un PNJ: Discuter
  * 
- * @author isen
+ * @author Thomas
  *
  */
 public class Discuter implements Comportement {

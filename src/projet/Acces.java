@@ -2,7 +2,8 @@ package projet;
 
 /**
  * Type d'accès aux pièces
- * @author isen
+ * 
+ * @author Thomas
  *
  */
 public interface Acces {

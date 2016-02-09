@@ -1,5 +1,11 @@
 package projet;
 
+/**
+ * Effet pour un objet: Gagner ou perdre la partie
+ * 
+ * @author Thomas
+ *
+ */
 public class FinirLeJeuObjet implements Effet {
 
 	private MaitreDuJeu maitreDuJeu;
@@ -7,8 +13,10 @@ public class FinirLeJeuObjet implements Effet {
 
 	/**
 	 * Constructeur de l'effet FinirLeJeu pour un objet
+	 * 
 	 * @param maitreDuJeu
-	 * @param victoire 0 = perdu; 1 = gagné
+	 * @param victoire
+	 *            0 = perdu; 1 = gagné
 	 */
 	public FinirLeJeuObjet(MaitreDuJeu maitreDuJeu, int victoire) {
 		setMaitreDuJeu(maitreDuJeu);
@@ -17,6 +25,7 @@ public class FinirLeJeuObjet implements Effet {
 
 	/**
 	 * Methode qui met permet de mettre en oeuvre l'effet FinirLeJeuObjet
+	 * 
 	 * @param objet
 	 */
 	public void interaction(Objet objet) {
@@ -32,7 +41,8 @@ public class FinirLeJeuObjet implements Effet {
 	}
 
 	/**
-	 * @param maitreDuJeu the maitreDuJeu to set
+	 * @param maitreDuJeu
+	 *            the maitreDuJeu to set
 	 */
 	public void setMaitreDuJeu(MaitreDuJeu maitreDuJeu) {
 		this.maitreDuJeu = maitreDuJeu;
@@ -46,7 +56,8 @@ public class FinirLeJeuObjet implements Effet {
 	}
 
 	/**
-	 * @param victoire the victoire to set
+	 * @param victoire
+	 *            the victoire to set
 	 */
 	public void setVictoire(int victoire) {
 		this.victoire = victoire;

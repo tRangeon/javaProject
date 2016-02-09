@@ -1,12 +1,20 @@
 package projet;
 
+/**
+ * Effet pour un objet: Ouvrir une pièce
+ * 
+ * @author Thomas
+ *
+ */
 public class OuvrirPiece implements Effet {
 
 	private Piece piece;
 
 	/**
 	 * Constructeur de l'effet OuvrirPiece
-	 * @param piece La pièce à ouvrir
+	 * 
+	 * @param piece
+	 *            La pièce à ouvrir
 	 */
 	public OuvrirPiece(Piece piece) {
 		setPiece(piece);
@@ -25,7 +33,8 @@ public class OuvrirPiece implements Effet {
 	}
 
 	/**
-	 * @param piece the piece to set
+	 * @param piece
+	 *            the piece to set
 	 */
 	public void setPiece(Piece piece) {
 		this.piece = piece;

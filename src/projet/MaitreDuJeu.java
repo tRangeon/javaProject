@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Classe qui pilote toutes les instances du jeu
  * 
- * @author isen
+ * @author Thomas
  *
  */
 public class MaitreDuJeu {
@@ -94,9 +94,9 @@ public class MaitreDuJeu {
 			} finally {
 				switch (reponse) {
 				case 1:
-					try{
-						selectionPNJ(joueur.getPosition().getPNJs());}
-					catch(java.util.InputMismatchException | java.lang.IndexOutOfBoundsException exception){
+					try {
+						selectionPNJ(joueur.getPosition().getPNJs());
+					} catch (java.util.InputMismatchException | java.lang.IndexOutOfBoundsException exception) {
 						System.out.println("Entrée incorrecte, retour au menu précédent");
 					}
 
@@ -189,7 +189,7 @@ public class MaitreDuJeu {
 			Scanner scanner = new Scanner(System.in);
 			int reponse = scanner.nextInt();
 			liste.get(reponse - 1).interagir();
-			}
+		}
 
 		attenteAppuiToucheEntrer();
 	}

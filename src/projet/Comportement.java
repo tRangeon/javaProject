@@ -3,7 +3,7 @@ package projet;
 /**
  * Comportement d'un PNJ
  * 
- * @author isen
+ * @author Thomas
  *
  */
 public interface Comportement {

@@ -3,7 +3,7 @@ package projet;
 /**
  * Effet pour un objet: affichage d'un texte
  * 
- * @author isen
+ * @author Thomas
  *
  */
 public class AfficherTexte implements Effet {

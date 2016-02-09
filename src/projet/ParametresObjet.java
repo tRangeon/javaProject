@@ -1,5 +1,11 @@
 package projet;
 
+/**
+ * Classe qui contient les parametres des objets
+ * 
+ * @author Thomas
+ *
+ */
 public class ParametresObjet {
 
 	private String affichageTexte;
@@ -7,18 +13,20 @@ public class ParametresObjet {
 	private String finDuJeu;
 
 	/**
-	 * Constructeur par défaut de la classe ParametresObjet, qui contient les différents textes à afficher selon l'effet de l'objet
+	 * Constructeur par défaut de la classe ParametresObjet, qui contient les
+	 * différents textes à afficher selon l'effet de l'objet
 	 */
 	public ParametresObjet() {
 		setAffichageTexte("Il ne se passe pas grand chose ...");
 		setOuverturePiece("Génial, je peux ouvrir une pièce avec ça ! Mais laquelle ... ?");
 		setFinDuJeu("T'es un champion !");
 	}
-	
+
 	/**
-	 * Constructeur de la classe ParametresObjet, qui contient les différents textes à afficher selon l'effet de l'objet
+	 * Constructeur de la classe ParametresObjet, qui contient les différents
+	 * textes à afficher selon l'effet de l'objet
 	 */
-	public ParametresObjet(String affichageTexte, String ouverturePiece, String finDuJeu){
+	public ParametresObjet(String affichageTexte, String ouverturePiece, String finDuJeu) {
 		setAffichageTexte(affichageTexte);
 		setOuverturePiece(ouverturePiece);
 		setFinDuJeu(finDuJeu);
@@ -38,11 +46,11 @@ public class ParametresObjet {
 	public void setAffichageTexte(String affichageTexte) {
 		this.affichageTexte = affichageTexte;
 	}
-	
+
 	/**
 	 * @return ouverturePiece
 	 */
-	public String getOuverturePiece(){
+	public String getOuverturePiece() {
 		return ouverturePiece;
 	}
 
@@ -53,7 +61,7 @@ public class ParametresObjet {
 	public void setOuverturePiece(String ouverturePiece) {
 		this.ouverturePiece = ouverturePiece;
 	}
-	
+
 	/**
 	 * @return finDuJeu
 	 */

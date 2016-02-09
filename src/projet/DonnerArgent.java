@@ -3,7 +3,7 @@ package projet;
 /**
  * Comportement d'un PNJ: Donner de l'argent
  * 
- * @author isen
+ * @author Thomas
  *
  */
 public class DonnerArgent implements Comportement {

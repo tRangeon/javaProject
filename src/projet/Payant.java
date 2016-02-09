@@ -1,5 +1,11 @@
 package projet;
 
+/**
+ * Accès pièce: Payant
+ * 
+ * @author Thomas
+ *
+ */
 public class Payant implements Acces {
 
 	private int prixEntree;
@@ -7,6 +13,7 @@ public class Payant implements Acces {
 
 	/**
 	 * Constructeur de l'accès Payant
+	 * 
 	 * @param prixEntree
 	 * @param joueur
 	 */
@@ -16,20 +23,23 @@ public class Payant implements Acces {
 	}
 
 	/**
-	 * Methode accession qui renvoie un booléen indiquant si l'accès est autorisé ou non
-	 * @param piece La pièce où l'on veut rentrer
+	 * Methode accession qui renvoie un booléen indiquant si l'accès est
+	 * autorisé ou non
+	 * 
+	 * @param piece
+	 *            La pièce où l'on veut rentrer
 	 * @return L'autorisation ou le refus de l'accès
 	 */
 	public boolean accession(Piece piece) {
 		boolean acces;
-		if (joueur.getArgent() >= prixEntree){ 
-			joueur.modifierArgent(- prixEntree);
+		if (joueur.getArgent() >= prixEntree) {
+			joueur.modifierArgent(-prixEntree);
 			joueur.afficherArgent();
 			acces = true;
-		} else{
+		} else {
 			acces = false;
 		}
-		return acces;	
+		return acces;
 	}
 
 	/**
@@ -40,7 +50,8 @@ public class Payant implements Acces {
 	}
 
 	/**
-	 * @param joueur the joueur to set
+	 * @param joueur
+	 *            the joueur to set
 	 */
 	public void setJoueur(Joueur joueur) {
 		this.joueur = joueur;
@@ -54,7 +65,8 @@ public class Payant implements Acces {
 	}
 
 	/**
-	 * @param prixEntree the prixEntree to set
+	 * @param prixEntree
+	 *            the prixEntree to set
 	 */
 	public void setPrixEntree(int prixEntree) {
 		this.prixEntree = prixEntree;

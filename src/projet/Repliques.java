@@ -3,8 +3,10 @@ package projet;
 import java.util.*;
 
 /**
- * Classe repliques, qui contient les toutes les repliques qu'un PNJ peut avoir pour chaque comportement possible
- * @author isen
+ * Classe repliques, qui contient les toutes les repliques qu'un PNJ peut avoir
+ * pour chaque comportement possible
+ * 
+ * @author Thomas
  */
 public class Repliques {
 
@@ -14,126 +16,135 @@ public class Repliques {
 	private ArrayList<String> discussions;
 	private ArrayList<String> finDuJeu;
 
-        /**
-         * Constructeur de Repliques
-         * @param parDefaut Si "true" des repliques par défaut sont insérées, sinon les champs sont laissés vides
-         */
+	/**
+	 * Constructeur de Repliques
+	 * 
+	 * @param parDefaut
+	 *            Si "true" des repliques par défaut sont insérées, sinon les
+	 *            champs sont laissés vides
+	 */
 	public Repliques(boolean parDefaut) {
-            invitations = new ArrayList<>();
-            donsArgent = new ArrayList<>();
-            prisesArgent = new ArrayList<>();
-            discussions = new ArrayList<>();
-            finDuJeu = new ArrayList<>();
-            
-            if(parDefaut == true){
-                invitations.add("Viens, suis moi !");
-                donsArgent.add("Tiens, prends ce cadeau");
-                donsArgent.add("Merci pour ton aide, voilà ton argent");
-                prisesArgent.add("Hé toi, donne moi ton portefeuille");
-                prisesArgent.add("Dis, t'aurais pas un peu d'argent à m'avancer ?");
-                discussions.add("Quelle belle journée ...");
-                discussions.add("C'est fou comme on s'amuse ici !");
-                discussions.add("Tu m'as l'air fatigué non ?");
-                discussions.add("Salut toi, ça va ?");
-                finDuJeu.add("Félicitations, tu as gagné !");
-            }
+		invitations = new ArrayList<>();
+		donsArgent = new ArrayList<>();
+		prisesArgent = new ArrayList<>();
+		discussions = new ArrayList<>();
+		finDuJeu = new ArrayList<>();
+
+		if (parDefaut == true) {
+			invitations.add("Viens, suis moi !");
+			donsArgent.add("Tiens, prends ce cadeau");
+			donsArgent.add("Merci pour ton aide, voilà ton argent");
+			prisesArgent.add("Hé toi, donne moi ton portefeuille");
+			prisesArgent.add("Dis, t'aurais pas un peu d'argent à m'avancer ?");
+			discussions.add("Quelle belle journée ...");
+			discussions.add("C'est fou comme on s'amuse ici !");
+			discussions.add("Tu m'as l'air fatigué non ?");
+			discussions.add("Salut toi, ça va ?");
+			finDuJeu.add("Félicitations, tu as gagné !");
+		}
 	}
-    
-        /**
-         * Methode qui permet d'ajouter une réplique
-         * 
-         * @param typeDeReplique 1 = invitation; 2 = donArgent; 3 = priseArgent; 4 = discussion; 5 = finDujeu
-         * @param replique 
-         */
-    public void ajouterReplique(int typeDeReplique, String replique){
-        switch (typeDeReplique){
-            case 1 :
-                invitations.add(replique);
-                break;
-            case 2 :
-                donsArgent.add(replique);
-                break;
-            case 3 :
-                prisesArgent.add(replique);
-                break;
-            case 4 :
-                discussions.add(replique);
-                break;
-            case 5 :
-                finDuJeu.add(replique);
-                break;
-        }
-    }
 
-    
-    /**
-     * @return the invitations
-     */
-    public ArrayList<String> getInvitations() {
-        return invitations;
-    }
+	/**
+	 * Methode qui permet d'ajouter une réplique
+	 * 
+	 * @param typeDeReplique
+	 *            1 = invitation; 2 = donArgent; 3 = priseArgent; 4 =
+	 *            discussion; 5 = finDujeu
+	 * @param replique
+	 */
+	public void ajouterReplique(int typeDeReplique, String replique) {
+		switch (typeDeReplique) {
+		case 1:
+			invitations.add(replique);
+			break;
+		case 2:
+			donsArgent.add(replique);
+			break;
+		case 3:
+			prisesArgent.add(replique);
+			break;
+		case 4:
+			discussions.add(replique);
+			break;
+		case 5:
+			finDuJeu.add(replique);
+			break;
+		}
+	}
 
-    /**
-     * @param invitations the invitations to set
-     */
-    public void setInvitations(ArrayList<String> invitations) {
-        this.invitations = invitations;
-    }
+	/**
+	 * @return the invitations
+	 */
+	public ArrayList<String> getInvitations() {
+		return invitations;
+	}
 
-    /**
-     * @return the donsArgent
-     */
-    public ArrayList<String> getDonsArgent() {
-        return donsArgent;
-    }
+	/**
+	 * @param invitations
+	 *            the invitations to set
+	 */
+	public void setInvitations(ArrayList<String> invitations) {
+		this.invitations = invitations;
+	}
 
-    /**
-     * @param donsArgent the donsArgent to set
-     */
-    public void setDonsArgent(ArrayList<String> donsArgent) {
-        this.donsArgent = donsArgent;
-    }
+	/**
+	 * @return the donsArgent
+	 */
+	public ArrayList<String> getDonsArgent() {
+		return donsArgent;
+	}
 
-    /**
-     * @return the prisesArgent
-     */
-    public ArrayList<String> getPrisesArgent() {
-        return prisesArgent;
-    }
+	/**
+	 * @param donsArgent
+	 *            the donsArgent to set
+	 */
+	public void setDonsArgent(ArrayList<String> donsArgent) {
+		this.donsArgent = donsArgent;
+	}
 
-    /**
-     * @param prisesArgent the prisesArgent to set
-     */
-    public void setPrisesArgent(ArrayList<String> prisesArgent) {
-        this.prisesArgent = prisesArgent;
-    }
+	/**
+	 * @return the prisesArgent
+	 */
+	public ArrayList<String> getPrisesArgent() {
+		return prisesArgent;
+	}
 
-    /**
-     * @return the discussions
-     */
-    public ArrayList<String> getDiscussions() {
-        return discussions;
-    }
+	/**
+	 * @param prisesArgent
+	 *            the prisesArgent to set
+	 */
+	public void setPrisesArgent(ArrayList<String> prisesArgent) {
+		this.prisesArgent = prisesArgent;
+	}
 
-    /**
-     * @param discussions the discussions to set
-     */
-    public void setDiscussions(ArrayList<String> discussions) {
-        this.discussions = discussions;
-    }
+	/**
+	 * @return the discussions
+	 */
+	public ArrayList<String> getDiscussions() {
+		return discussions;
+	}
 
-    /**
-     * @return the finDuJeu
-     */
-    public ArrayList<String> getFinDuJeu() {
-        return finDuJeu;
-    }
+	/**
+	 * @param discussions
+	 *            the discussions to set
+	 */
+	public void setDiscussions(ArrayList<String> discussions) {
+		this.discussions = discussions;
+	}
 
-    /**
-     * @param finDuJeu the finDuJeu to set
-     */
-    public void setFinDuJeu(ArrayList<String> finDuJeu) {
-        this.finDuJeu = finDuJeu;
-    }
+	/**
+	 * @return the finDuJeu
+	 */
+	public ArrayList<String> getFinDuJeu() {
+		return finDuJeu;
+	}
+
+	/**
+	 * @param finDuJeu
+	 *            the finDuJeu to set
+	 */
+	public void setFinDuJeu(ArrayList<String> finDuJeu) {
+		this.finDuJeu = finDuJeu;
+	}
 
 }

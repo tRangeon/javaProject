@@ -1,8 +1,9 @@
 package projet;
 
 /**
- *
- * @author isen
+ * Classe qui contient le main
+ * 
+ * @author Thomas
  */
 public class Projet {
 

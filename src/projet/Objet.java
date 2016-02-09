@@ -1,5 +1,11 @@
 package projet;
 
+/**
+ * Objets qui peuvent interagir avec le joueur
+ * 
+ * @author isen
+ *
+ */
 public class Objet {
 
 	private int identifiant;
@@ -9,6 +15,7 @@ public class Objet {
 
 	/**
 	 * Constructeur de la classe Objet
+	 * 
 	 * @param identifiant
 	 * @param nom
 	 * @param effet
@@ -28,60 +35,64 @@ public class Objet {
 		this.effet.interaction(this);
 	}
 
-    /**
-     * @return the identifiant
-     */
-    public int getIdentifiant() {
-        return identifiant;
-    }
+	/**
+	 * @return the identifiant
+	 */
+	public int getIdentifiant() {
+		return identifiant;
+	}
 
-    /**
-     * @param identifiant the identifiant to set
-     */
-    public void setIdentifiant(int identifiant) {
-        this.identifiant = identifiant;
-    }
+	/**
+	 * @param identifiant
+	 *            the identifiant to set
+	 */
+	public void setIdentifiant(int identifiant) {
+		this.identifiant = identifiant;
+	}
 
-    /**
-     * @return the nom
-     */
-    public String getNom() {
-        return nom;
-    }
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
 
-    /**
-     * @param nom the nom to set
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	/**
+	 * @param nom
+	 *            the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    /**
-     * @return the effet
-     */
-    public Effet getEffet() {
-        return effet;
-    }
+	/**
+	 * @return the effet
+	 */
+	public Effet getEffet() {
+		return effet;
+	}
 
-    /**
-     * @param effet the effet to set
-     */
-    public void setEffet(Effet effet) {
-        this.effet = effet;
-    }
+	/**
+	 * @param effet
+	 *            the effet to set
+	 */
+	public void setEffet(Effet effet) {
+		this.effet = effet;
+	}
 
-    /**
-     * @return the parametresObjet
-     */
-    public ParametresObjet getParametresObjet() {
-        return parametresObjet;
-    }
+	/**
+	 * @return the parametresObjet
+	 */
+	public ParametresObjet getParametresObjet() {
+		return parametresObjet;
+	}
 
-    /**
-     * @param parametresObjet the parametresObjet to set
-     */
-    public void setParametresObjet(ParametresObjet parametresObjet) {
-        this.parametresObjet = parametresObjet;
-    }
+	/**
+	 * @param parametresObjet
+	 *            the parametresObjet to set
+	 */
+	public void setParametresObjet(ParametresObjet parametresObjet) {
+		this.parametresObjet = parametresObjet;
+	}
 
 }
