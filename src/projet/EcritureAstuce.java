@@ -5,8 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- *classe qui permet d'écrire une " soluce " dans un fichier text.
- * @author admin
+ * Classe qui permet d'écrire une " soluce " dans un fichier texte
+ * @author Felix
  */
 public class EcritureAstuce {
     private MaitreDuJeu maitreDuJeu;
