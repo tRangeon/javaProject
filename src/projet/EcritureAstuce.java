@@ -71,17 +71,6 @@ public class EcritureAstuce {
                     }
                 }
             }            
-            for(int i = 0; i < getMaitreDuJeu().getPieces().size(); i++){
-                for(int j = 0; j < getMaitreDuJeu().getPieces().get(i).getObjets().size(); j++){
-                    if (maitreDuJeu.getPieces().get(i).getObjets().get(j).getEffet().getClass().equals(new FinirLeJeuObjet(maitreDuJeu, 1).getClass())){
-                        if (egal((FinirLeJeuObjet)maitreDuJeu.getPieces().get(i).getObjets().get(j).getEffet(),new FinirLeJeuObjet(maitreDuJeu, 1))){
-                            fw.write(getMaitreDuJeu().getPieces().get(i).getObjets().get(j).getNom()+" peut vous faire gagner la partie");
-                            fw.write (Newligne);
-
-                        }
-                    }
-                }
-            }
             fw.close();
         }
         catch (IOException exception)
@@ -93,7 +82,7 @@ public class EcritureAstuce {
      * 
      * @param finir1
      * @param finir2
-     * @return 1 si les deux classes(FinirLeJeuPNJ) ont le meme attribut victoire
+     * @return true si les deux classes(FinirLeJeuPNJ) ont le meme attribut victoire, sinon return false
      */
     public boolean egal(FinirLeJeuPNJ finir1, FinirLeJeuPNJ finir2){
         if(finir1.getVictoire() == finir2.getVictoire()){
@@ -106,7 +95,7 @@ public class EcritureAstuce {
      * 
      * @param finir1
      * @param finir2
-     * @return 1 si les deux classes(FinirLeJeObjet) ont le meme attribut victoire
+     * @return true si les deux classes(FinirLeJeuObjet) ont le meme attribut victoire, sinon return false
      */
     public boolean egal(FinirLeJeuObjet finir1, FinirLeJeuObjet finir2){
         if(finir1.getVictoire() == finir2.getVictoire()){
