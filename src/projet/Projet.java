@@ -21,7 +21,11 @@ public class Projet {
 
 		// Chargement du scenario
 		Scenario scenario = new Scenario(joueur, maitreDuJeu);
-
+		
+		//Ecriture du fichier soluce
+		EcritureAstuce ecritureAstuce=new EcritureAstuce(maitreDuJeu);
+      		ecritureAstuce.ecrire();
+      		
 		// Lancement du jeu
 		while ((maitreDuJeu.getVictoire() != 0) && (maitreDuJeu.getVictoire() != 1)) {
 			maitreDuJeu.jouerUnTour();
